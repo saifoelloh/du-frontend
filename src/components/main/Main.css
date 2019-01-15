@@ -1,0 +1,6 @@
+.hero {
+  height: 75vh;
+  background-image: url(../../asset/image/photo_2019-01-15_17-08-20.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
