@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Collapse,
   Nav,
@@ -7,10 +7,11 @@ import {
   Navbar,
   NavbarBrand,
   NavLink,
-} from 'reactstrap';
+} from 'reactstrap'
 
 export default class NavBar extends React.Component {
   state = {
+    isOpen: true,
     navs: [
       {
         name: 'Home',
@@ -29,24 +30,24 @@ export default class NavBar extends React.Component {
         link: '#contact',
       },
     ],
-  };
+  }
   render() {
     return (
       <Navbar color="dark" expand="md">
         <NavbarBrand className="text-white">Doscom University</NavbarBrand>
         <NavbarToggler />
-        <Collapse isOpen="true" navbar>
+        <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            {this.state.navs.map(nav => {
+            {this.state.navs.map((nav, key) => {
               return (
-                <NavItem>
+                <NavItem key={key}>
                   <NavLink href={nav.link}>{nav.name}</NavLink>
                 </NavItem>
-              );
+              )
             })}
           </Nav>
         </Collapse>
       </Navbar>
-    );
+    )
   }
 }

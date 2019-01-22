@@ -1,53 +1,58 @@
-import React from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {Col, Container, Row} from 'reactstrap';
+import React from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {Col, Container, Row} from 'reactstrap'
 
 export default class List extends React.Component {
   state = {
-    lesson: [
+    lessons: [
       {
-        name: 'Web',
-        icon: '',
-        description: '',
+        id: 1,
+        name: 'Web Dasar',
+        icon: ['fab', 'html5'],
       },
       {
-        name: 'Web',
-        icon: '',
-        description: '',
+        id: 2,
+        name: 'Web Lanjut',
+        icon: ['fab', 'hotjar'],
       },
       {
-        name: 'Web',
-        icon: '',
-        description: '',
+        id: 3,
+        name: 'Android',
+        icon: ['fab', 'android'],
       },
       {
-        name: 'Web',
-        icon: '',
-        description: '',
+        id: 4,
+        name: 'Jaringan',
+        icon: ['fab', 'html5'],
       },
       {
-        name: 'Web',
-        icon: '',
-        description: '',
+        id: 5,
+        name: 'Game',
+        icon: ['fas', 'gamepad'],
       },
     ],
-  };
+  }
   render() {
     return (
-      <Container>
-        <Row className="mx-md-5 justify-content-center">
-          {this.state.lessons.map(lesson => {
-            return (
-              <Col>
-                <FontAwesomeIcon icon={lesson.icon} />
-                <hr />
-                <h3>{lesson.name}</h3>
-                <p>{lesson.description}</p>
-              </Col>
-            );
-          })}
-        </Row>
+      <Container
+        id="list"
+        className="text-center d-flex justify-content-center align-items-center"
+        style={{minHeight: '75vh'}}>
+        <div>
+          <h1 className="my-md-5">Daftar Kelas</h1>
+          <Row className="mx-md-5 justify-content-center">
+            {this.state.lessons.map((lesson, key) => {
+              return (
+                <Col key={key} md="4">
+                  <FontAwesomeIcon icon={lesson.icon} size="6x" />
+                  <hr width="60%" />
+                  <h3>{lesson.name}</h3>
+                </Col>
+              )
+            })}
+          </Row>
+        </div>
       </Container>
-    );
+    )
   }
 }

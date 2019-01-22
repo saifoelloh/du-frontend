@@ -1,0 +1,14 @@
+.hero {
+  background-image: url(../image/hero-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.lesson {
+  height: 50vh;
+}
+.lesson-background {
+  background-image: url(../image/lesson-background.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
