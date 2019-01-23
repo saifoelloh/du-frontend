@@ -1,7 +1,6 @@
-import Axios from 'axios'
-import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {Link} from 'react-router-dom'
+import Axios from 'axios';
+import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   Button,
   Card,
@@ -22,8 +21,8 @@ import {
   ModalFooter,
   ModalHeader,
   Row,
-} from 'reactstrap'
-import * as swal from 'sweetalert'
+} from 'reactstrap';
+import * as swal from 'sweetalert';
 
 export default class Register extends React.Component {
   state = {
@@ -44,19 +43,19 @@ export default class Register extends React.Component {
     open: false,
     id_daftar: '',
     bukti: null,
-  }
+  };
 
   handleChange = (e) => {
-    if (e.target.files !== null) {
+    if (e.target.name === 'bukti') {
       this.setState({
         [e.target.name]: e.target.files[0],
-      })
+      });
     } else {
       this.setState({
         [e.target.name]: e.target.value,
-      })
+      });
     }
-  }
+  };
 
   handleSubmit = () => {
     let data = {
@@ -68,35 +67,35 @@ export default class Register extends React.Component {
       id_tele: this.state.id_tele,
       bukti: '',
       status: 0,
-    }
+    };
 
     Axios.post('https://doscomdu.herokuapp.com/api/daftar', data)
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         swal({
           icon: 'success',
           title: 'Registrasi Berhasil',
           text: 'Silahkan cek email anda untuk konfirmasi pembayaran.',
-        })
+        });
       })
       .then(() => {
-        window.open('https://main.google.com/', '_blank')
+        window.open('https://main.google.com/', '_blank');
       })
       .catch((err) => {
-        console.error(err.response)
+        console.error(err.response);
         swal({
           icon: 'error',
           title: err.response.statusText,
           text: err.response.data.message,
-        })
-      })
-  }
+        });
+      });
+  };
 
   toggle = () => {
     this.setState({
       open: !this.state.open,
-    })
-  }
+    });
+  };
 
   handleConfirm = () => {
     Axios.post(
@@ -104,7 +103,7 @@ export default class Register extends React.Component {
       {bukti: this.state.bukti},
     )
       .then((res) => {
-        console.log(res)
+        console.log(res);
       })
       .then(() => {
         swal({
@@ -112,10 +111,17 @@ export default class Register extends React.Component {
           title: 'Konfirmasi Berhasil!',
           text:
             'Selamat anda sudah resmi terdaftar pada doscom university 2019',
-        })
+        });
       })
-      .catch((err) => console.error(err.response))
-  }
+      .catch((err) => {
+        console.error(err.response);
+        swal({
+          icon: 'error',
+          title: err.response.statusText + '-' + err.response.status,
+          text: err.response.data.message,
+        });
+      });
+  };
 
   render() {
     return (
@@ -189,7 +195,7 @@ export default class Register extends React.Component {
                             <option key={key} value={key}>
                               {datum}
                             </option>
-                          )
+                          );
                         })}
                       </Input>
                     </InputGroup>
@@ -237,18 +243,16 @@ export default class Register extends React.Component {
                 </Form>
               </CardBody>
               <CardFooter className="text-right">
-                <Link to="/">Kembali</Link> |
+                <Button href="/" color="link">
+                  Kembali
+                </Button>
+                |
                 <Button onClick={this.toggle} color="link">
                   Sudah Daftar ?
                 </Button>
               </CardFooter>
-              <Modal
-                isOpen={this.state.open}
-                toggle={this.toggle}
-                centered={true}>
-                <ModalHeader toggle={this.toggle}>
-                  Konfirmasi Pembayaran
-                </ModalHeader>
+              <Modal isOpen={this.state.open} centered={true}>
+                <ModalHeader>Konfirmasi Pembayaran</ModalHeader>
                 <ModalBody>
                   <Container>
                     <Form encType="multipart/form-data">
@@ -276,6 +280,9 @@ export default class Register extends React.Component {
                   </Container>
                 </ModalBody>
                 <ModalFooter>
+                  <Button color="warning" onClick={this.toggle}>
+                    Cancel
+                  </Button>
                   <Button color="success" onClick={this.handleConfirm}>
                     Kumpul
                   </Button>
@@ -285,6 +292,6 @@ export default class Register extends React.Component {
           </Col>
         </Row>
       </Container>
-    )
+    );
   }
 }

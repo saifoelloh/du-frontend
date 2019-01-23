@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import Hero from './Hero.jsx'
-import LessonLeft from './LessonLeft.jsx'
-import LessonRight from './LessonRight.jsx'
-import List from './List.jsx'
-import NavBar from './NavBar'
+import Hero from './Hero.jsx';
+import LessonLeft from './LessonLeft.jsx';
+import LessonRight from './LessonRight.jsx';
+import List from './List.jsx';
+import NavBar from './NavBar';
+import Review from './Review.jsx';
 
 export default class Home extends React.Component {
   state = {
@@ -45,7 +46,7 @@ export default class Home extends React.Component {
         icon: ['fas', 'gamepad'],
       },
     ],
-  }
+  };
   render() {
     return (
       <div>
@@ -59,9 +60,10 @@ export default class Home extends React.Component {
             <LessonLeft key={key} data={datum} />
           ) : (
             <LessonRight key={key} data={datum} />
-          )
+          );
         })}
+        <Review />
       </div>
-    )
+    );
   }
 }
