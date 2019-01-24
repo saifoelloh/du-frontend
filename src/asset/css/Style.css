@@ -1,5 +1,5 @@
 .hero {
-  background-image: url(../image/hero-background.jpg);
+  background-image: url(../image/lightTrail.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -11,4 +11,44 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.daftar {
+  position: relative;
+  -web-kit-clip-path: polygon(0 0, 100% 0, 100 calc(100% - 5vw), 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+  margin-bottom: -5vw;
+}
+
+.img-profile {
+  border: 10px solid black;
+  border-radius: 50%;
+}
+
+.kotak {
+  display: grid;
+  grid-template-areas:
+    'image title'
+    'text text';
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+}
+
+.kotak-item-1 {
+  grid-area: image;
+  place-self: center;
+}
+
+.kotak-item-2 {
+  grid-area: title;
+}
+
+.kotak-item-3 {
+  grid-area: text;
+}
+
+.tengah {
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }

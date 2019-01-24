@@ -4,21 +4,36 @@ import {Button, Col, Row} from 'reactstrap';
 export default class Hero extends React.Component {
   render() {
     return (
-      <Row className="mx-0 h-100">
+      <Row
+        style={{height: '100vh'}}
+        className="mx-0 hero justify-content-center align-items-center">
         <Col
-          md="5"
-          className="bg-dark text-white d-flex justify-content-center align-items-center flex-column p-md-5 text-center">
-          <h2>Doscom University</h2>
+          md="6"
+          className="text-center d-flex flex-column justify-content-center align-items-center">
+          <h1>
+            <strong>DOSCOM</strong> UNIVERSITY
+          </h1>
           <p>
-            Amet porro alias ad quibusdam quidem. Id non temporibus quae dolores
-            commodi Minima commodi aut ab nesciunt corrupti? Adipisci animi
-            nihil quo natus corrupti.
+            Adipisicing cumque saepe autem nobis necessitatibus corporis?
+            Repellat nihil blanditiis deleniti molestiae assumenda velit
+            Excepturi explicabo blanditiis eligendi dignissimos deleniti
+            corporis autem. Alias dolore perferendis optio ab porro Minus
+            perferendis!
           </p>
-          <Button href="#list" outline color="primary" size="lg">
-            More
-          </Button>
+          <ul className="list-inline">
+            <li className="list-inline-item">
+              <Button href="/register" color="primary">
+                <strong>Daftar</strong> Sekarang
+              </Button>
+            </li>
+            <li className="list-inline-item">
+              <Button href="#kelas" color="success">
+                <strong>Lihat</strong> Kelas
+              </Button>
+            </li>
+          </ul>
+          <p className="my-md-4" />
         </Col>
-        <Col md="7" className="hero" />
       </Row>
     );
   }

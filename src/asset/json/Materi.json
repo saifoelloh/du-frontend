@@ -1,0 +1,100 @@
+{
+  "materi": [
+    [
+      {
+        "name": "Web Dasar",
+        "materi": "html, css",
+        "icon": ["fab", "html5"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Web Lanjut",
+        "materi": "pengenalan ci",
+        "icon": ["fab", "hotjar"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Android",
+        "materi": "xml",
+        "icon": ["fab", "android"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Jaringan",
+        "materi": "html, css",
+        "icon": ["fas", "satellite-dish"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Game",
+        "materi": "html, css",
+        "icon": ["fas", "gamepad"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      }
+    ],
+    [
+      {
+        "name": "Web Dasar",
+        "materi": "html, css",
+        "icon": ["fab", "html5"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Web Lanjut",
+        "materi": "pengenalan ci",
+        "icon": ["fab", "hotjar"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Android",
+        "materi": "xml",
+        "icon": ["fab", "android"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Jaringan",
+        "materi": "html, css",
+        "icon": ["fas", "satellite-dish"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Game",
+        "materi": "html, css",
+        "icon": ["fas", "gamepad"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      }
+    ],
+    [
+      {
+        "name": "Web Dasar",
+        "materi": "html, css",
+        "icon": ["fab", "html5"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Web Lanjut",
+        "materi": "pengenalan ci",
+        "icon": ["fab", "hotjar"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Android",
+        "materi": "xml",
+        "icon": ["fab", "android"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Jaringan",
+        "materi": "html, css",
+        "icon": ["fas", "satellite-dish"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      },
+      {
+        "name": "Game",
+        "materi": "html, css",
+        "icon": ["fas", "gamepad"],
+        "desc": "We are having trouble restoring your last browsing session. Select Restore Session to try again."
+      }
+    ]
+  ]
+}

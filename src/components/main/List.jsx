@@ -1,58 +1,70 @@
-import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {Col, Container, Row} from 'reactstrap'
+import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {Col, Container, Row} from 'reactstrap';
 
 export default class List extends React.Component {
   state = {
     lessons: [
       {
-        id: 1,
         name: 'Web Dasar',
         icon: ['fab', 'html5'],
+        lesson: 'HTML5, CSS, Javascript',
+        desc: 'Hello world lorem ipsum dolor amet bla',
       },
       {
-        id: 2,
         name: 'Web Lanjut',
         icon: ['fab', 'hotjar'],
+        lesson: 'PHP, Code Igniter',
+        desc: 'Hello world lorem ipsum dolor amet bla',
       },
       {
-        id: 3,
         name: 'Android',
         icon: ['fab', 'android'],
+        lesson: 'XML, StyleSheet, Java',
+        desc: 'Hello world lorem ipsum dolor amet bla',
       },
       {
-        id: 4,
         name: 'Jaringan',
-        icon: ['fab', 'html5'],
+        icon: ['fas', 'satellite-dish'],
+        lesson: 'XML, StyleSheet, Java',
+        desc: 'Hello world lorem ipsum dolor amet bla',
       },
       {
-        id: 5,
         name: 'Game',
         icon: ['fas', 'gamepad'],
+        lesson: 'XML, StyleSheet, Java',
+        desc: 'Hello world lorem ipsum dolor amet bla',
       },
     ],
-  }
+  };
+
   render() {
     return (
-      <Container
-        id="list"
-        className="text-center d-flex justify-content-center align-items-center"
-        style={{minHeight: '75vh'}}>
-        <div>
-          <h1 className="my-md-5">Daftar Kelas</h1>
-          <Row className="mx-md-5 justify-content-center">
-            {this.state.lessons.map((lesson, key) => {
+      <div className="py-md-5 bg-primary d-flex flex-column justify-content-center align-items-center daftar">
+        <h1 className="text-center mb-md-5">Apa Yang Kita Pelajari ?</h1>
+        <Container>
+          <Row className="justify-content-center align-items-center">
+            {this.state.lessons.map((item, key) => {
               return (
-                <Col key={key} md="4">
-                  <FontAwesomeIcon icon={lesson.icon} size="6x" />
-                  <hr width="60%" />
-                  <h3>{lesson.name}</h3>
+                <Col key={key} md="4" className="my-md-3 kotak">
+                  <FontAwesomeIcon
+                    className="kotak-item-1 tengah"
+                    icon={item.icon}
+                    size="6x"
+                  />
+                  <div className="kotak-item-2 d-flex flex-column justify-content-center align-items-center">
+                    <h3>{item.name}</h3>
+                    <p className="text-muted">{item.lesson}</p>
+                  </div>
+                  <Container className="kotak-item-3 text-justify mt-md-3">
+                    <p>{item.desc}</p>
+                  </Container>
                 </Col>
-              )
+              );
             })}
           </Row>
-        </div>
-      </Container>
-    )
+        </Container>
+      </div>
+    );
   }
 }
