@@ -5,6 +5,7 @@ import {fas} from '@fortawesome/free-solid-svg-icons';
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 
+import Admin from './components/admin/Admin.jsx';
 import Home from './components/main/Home';
 import Login from './components/auth/Login.jsx';
 import Register from './components/auth/Register.jsx';
@@ -19,7 +20,7 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
-          <Route path="/admin/" exact component={Home} />
+          <Route path="/admin/" exact component={Admin} />
           <Route path="/admin/{id}" component={Home} />
         </Switch>
       </div>
