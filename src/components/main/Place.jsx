@@ -1,12 +1,14 @@
 import React from 'react';
 import {Col, Container, Row} from 'reactstrap';
 
+import '../../asset/css/Style.css';
+
 export default class Place extends React.Component {
   render() {
     return (
       <Row className="mx-0 w-100" style={{height: '90vh'}}>
-        <Col md="8" className="bg-primary p-md-3">
-          <div className="bg-secondary p-md-5 w-50">
+        <Col md="8" className="lesson-map p-md-3">
+          <div className="bg-info p-md-5 w-50">
             <h3>Tempat Kegiatan</h3>
             <p>
               We are having trouble restoring your last browsing session. Select

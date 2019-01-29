@@ -39,11 +39,11 @@ export default class Login extends React.Component {
       password: this.state.password,
     };
     axios
-      .post('https://doscomdu.herokuapp.com/api/user', data)
+      .post('https://doscomdu.herokuapp.com/api/auth/login', data)
       .then((res) => {
-        let url = `/admin/${res.data._id}`;
+        console.log(res);
         this.setState({
-          pindah: <Redirect to={url} />,
+          pindah: <Redirect to="/admin/" />,
         });
       })
       .catch((err) => {
@@ -76,7 +76,6 @@ export default class Login extends React.Component {
                       <Input
                         type="text"
                         name="email"
-                        value={this.state.email}
                         onChange={this.handleChange}
                       />
                     </InputGroup>
@@ -85,13 +84,12 @@ export default class Login extends React.Component {
                     <InputGroup>
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
-                          <FontAwesomeIcon icon={['fas', 'user']} />
+                          <FontAwesomeIcon icon={['fas', 'lock']} />
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
                         type="password"
                         name="password"
-                        value={this.state.email}
                         onChange={this.handleChange}
                       />
                     </InputGroup>

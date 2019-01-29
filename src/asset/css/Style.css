@@ -1,11 +1,19 @@
 .hero {
-  background-image: url(../image/lightTrail.jpg);
+  background-image: url(../image/hero.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .lesson {
   height: 50vh;
 }
+
+.lesson-map {
+  background-image: url(../image/peta.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .lesson-background {
   background-image: url(../image/lesson-background.png);
   background-size: contain;

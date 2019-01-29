@@ -39,10 +39,20 @@ export default class Register extends React.Component {
       ['fas', 'server'],
       ['fas', 'gamepad'],
     ],
-    nama_kelas: ['Web Dasar', 'Web Lanjut', 'Android', 'Jaringan', 'Game'],
+    nama_kelas: [],
     open: false,
     id_daftar: '',
     bukti: null,
+  };
+
+  getData = () => {
+    Axios.get('https://doscomdu.herokuapp.com/api/kelas')
+      .then((res) => {
+        this.setState({
+          nama_kelas: res.data,
+        });
+      })
+      .catch((err) => console.error(err.response));
   };
 
   handleChange = (e) => {
@@ -62,7 +72,7 @@ export default class Register extends React.Component {
       nama: this.state.nama,
       email: this.state.email,
       instansi: this.state.instansi,
-      kelas: this.state.kelas,
+      kelas: this.state.nama_kelas[this.state.kelas]._id,
       telp: this.state.telp,
       id_tele: this.state.id_tele,
       bukti: '',
@@ -122,6 +132,10 @@ export default class Register extends React.Component {
         });
       });
   };
+
+  componentDidMount() {
+    this.getData();
+  }
 
   render() {
     return (
@@ -193,7 +207,7 @@ export default class Register extends React.Component {
                         {this.state.nama_kelas.map((datum, key) => {
                           return (
                             <option key={key} value={key}>
-                              {datum}
+                              {datum.nama}
                             </option>
                           );
                         })}

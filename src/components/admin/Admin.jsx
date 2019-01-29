@@ -48,33 +48,24 @@ import Profile from './Profile.jsx';
 export default class Admin extends React.Component {
   state = {
     isOpen: false,
-    data: [
-      {
-        _id: 1,
-        nama: 'ini gue',
-        email: 'ini@gue.com',
-        instansi: 'Sekolah Gue',
-        kelas: 0,
-        telp: '01841',
-        id_tele: '@ini_gue',
-        bukti: 0,
-        status: 0,
-      },
-    ],
-    detail: [],
+    admin: [],
+    data: [],
     daftar_kelas: ['Web Dasar', 'Web Lanjut', 'Android', 'Jaringan', 'Game'],
     key: 0,
   };
 
   getData = () => {
     axios
-      .get('https://jsonplaceholder.typicode.com/users')
-      .then((res) => {
-        console.log(res);
-        this.setState({
-          data: res,
-        });
-      })
+      .all([
+        axios.get('https://doscomdu.herokuapp.com/api/user'),
+        axios.get('https://doscomdu.herokuapp.com/api/daftar'),
+        axios.get('https://doscomdu.herokuapp.com/api/kelas'),
+      ])
+      .then(
+        axios.spread((admin, users, classes) => {
+          console.log(admin.data, users.data, classes.data);
+        }),
+      )
       .catch((err) => console.error(err.response));
   };
 
@@ -130,21 +121,7 @@ export default class Admin extends React.Component {
   render() {
     return (
       <div>
-        <Navigation />
-        <Switch>
-          <Route path={`/admin/${this.state.admin._id}`} component={Profile} />
-          <Route path={`/admin/${this.state.admin._id}`} component={ListUser} />
-        </Switch>
-        <Container className="d-flex justify-content-center align-items-center">
-          <Button onClick={this.toggle}>Coba</Button>
-          <ModalDetail
-            key={this.state.key}
-            isOpen={this.state.isOpen}
-            toggle={this.toggle}
-            data={this.state.data[0]}
-            daftar_kelas={this.state.daftar_kelas}
-          />
-        </Container>
+        <h1>Hello</h1>
       </div>
     );
   }
